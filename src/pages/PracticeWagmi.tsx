@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import { Chain, Client, InjectedConnector } from "@wagmi/core";
 import { ContractInterface } from "ethers";
 import {
@@ -10,10 +12,9 @@ import {
   usePrepareContractWrite,
   useSignMessage,
 } from "wagmi";
-import VoteItPlz from "../data/VoteItPlz.json";
-import GensoKishiOnline from "../data/GensoKishiOnline.json";
-import React from "react";
-import { Link } from "react-router-dom";
+import GensoKishiOnline from "../data/GensoKishiOnlineABI.json";
+// import VoteItPlz from "../data/VoteItPlz.json";
+const VoteItPlz: any = require("../data/VoteItPlz.json");
 
 const voteItPlzContract = {
   addressOrName: "0xC4391186b5d67F8ee68D3Daf16f4BF026bAd6bE6",
@@ -35,17 +36,17 @@ const PracticeWagmi: React.FC = () => {
   return (
     <>
       <div>
-        isConnected ? (
-        <>
-          <p>Connected to {address}</p>
-          <button onClick={() => disconnect()}>disconnect</button>
-          <Sub />
-        </>
+        {isConnected ? (
+          <>
+            <p>Connected to {address}</p>
+            <button onClick={() => disconnect()}>disconnect</button>
+            <Sub />
+          </>
         ) : (
-        <>
-          <button onClick={() => connect()}>Connect Wallet</button>
-        </>
-        )
+          <>
+            <button onClick={() => connect()}>Connect Wallet</button>
+          </>
+        )}
       </div>
       <Link to={"/wagmi"}>wagmi practice</Link>
       <Link to={"/lit"}>Lit-Protocol practice</Link>

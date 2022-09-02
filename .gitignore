@@ -60,3 +60,4 @@ sketch
 # End of https://www.toptal.com/developers/gitignore/api/linux,react,visualstudiocode
 
 src/data/*
+build/*
