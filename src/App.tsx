@@ -1,11 +1,11 @@
 import "./App.css";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { infuraProvider } from "wagmi/providers/infura";
-import PracticeWagmi from "./components/PracticeWagmi";
+import PracticeWagmi from "./pages/PracticeWagmi";
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import React from "react";
-import PracticeLit from "./components/PracticeLit";
-import Home from "./components/Home";
+import PracticeLit from "./pages/PracticeLit";
+import Home from "./pages/Home";
 
 const { chains, provider, webSocketProvider } = configureChains(
   [chain.mainnet, chain.polygon, chain.polygonMumbai],
